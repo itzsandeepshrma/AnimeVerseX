@@ -2,6 +2,26 @@ const searchInput = document.getElementById("search");
 const animeList = document.getElementById("animeList");
 const animeModal = document.getElementById("animeModal");
 const modalContent = document.getElementById("modalContent");
+const recommendContent = document.getElementById("recommendContent");
+let topAnimeList = [];
+
+async function loadTopAnime() {
+  const res = await fetch("https://api.jikan.moe/v4/top/anime?limit=25");
+  const data = await res.json();
+  topAnimeList = data.data;
+  showRandomRecommendation();
+  setInterval(showRandomRecommendation, 5000); // change every 5s
+}
+
+function showRandomRecommendation() {
+  if (topAnimeList.length === 0) return;
+  const random = topAnimeList[Math.floor(Math.random() * topAnimeList.length)];
+  recommendContent.innerHTML = `
+    <img src="${random.images.jpg.image_url}" alt="${random.title}">
+    <h3>${random.title}</h3>
+    <p><strong>Rating:</strong> ${random.score || 'N/A'} | <strong>Episodes:</strong> ${random.episodes}</p>
+  `;
+}
 
 async function searchAnime(query) {
   const res = await fetch(`https://api.jikan.moe/v4/anime?q=${query}&limit=12`);
@@ -16,11 +36,7 @@ async function searchAnime(query) {
       <h3>${anime.title}</h3>
       <p>Rating: ${anime.score || 'N/A'} | Episodes: ${anime.episodes}</p>
     `;
-
-    card.addEventListener('click', () => {
-      showAnimeDetails(anime);
-    });
-
+    card.addEventListener('click', () => showAnimeDetails(anime));
     animeList.appendChild(card);
   });
 }
@@ -46,7 +62,7 @@ searchInput.addEventListener("keyup", (e) => {
 });
 
 window.addEventListener("click", (e) => {
-  if (e.target === animeModal) {
-    animeModal.style.display = 'none';
-  }
+  if (e.target === animeModal) animeModal.style.display = 'none';
 });
+
+loadTopAnime();
