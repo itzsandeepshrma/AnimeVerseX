@@ -13,7 +13,7 @@ h1 {
   font-size: 3em;
   color: #a855f7;
   text-shadow: 0 0 10px #a855f7;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 input {
@@ -28,6 +28,26 @@ input {
   background: #2a003f;
   color: #fff;
   box-shadow: 0 0 10px #a855f7;
+}
+
+#recommended {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 0;
+  background: #240038;
+  border: 2px solid #a855f7;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 20px #a855f7;
+  padding: 20px;
+}
+
+#recommended img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .anime-list {
