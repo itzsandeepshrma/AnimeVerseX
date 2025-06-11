@@ -33,7 +33,7 @@
 
 No setup needed — simply visit the live site or clone the repo:
 
-**Live Preview**: [AnimeVerseX](https://itzsandeepshrma.github.io/AnimeVerseX)  
+**[AnimeVerseX](https://itzsandeepshrma.github.io/AnimeVerseX)**
 
 ### Run Locally:
 ```bash
@@ -42,3 +42,32 @@ cd AnimeVerseX
 open index.html
 ```
 
+## How It Works
+
+- Fetches anime data dynamically using the Jikan API  
+- Displays trending anime with cover image, title, and score  
+- Users can click on any anime card to view detailed information  
+- Renders anime synopsis, ratings, type, episodes, and more  
+- Smooth animated interface with responsive layout  
+- Seamless search experience with real-time card updates  
+
+---
+
+## Contribution
+
+Got ideas or improvements? We’d love your input!  
+Fork the project and submit a pull request or open an issue.
+
+- [Fork the Repo](https://github.com/itzsandeepshrma/AnimeVerseX/fork)  
+- [Submit a Pull Request](https://github.com/itzsandeepshrma/AnimeVerseX/pulls)  
+- [Open an Issue](https://github.com/itzsandeepshrma/AnimeVerseX/issues)
+
+---
+
+**© 2025 sᴧɴᴅᴇᴇᴘ sʜᴧʀᴍᴧ ᴧʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ**
+
+---
+
+## License
+
+This project is licensed under the **[MIT License](https://github.com/itzsandeepshrma/AnimeVerseX/blob/main/LICENSE)**.
